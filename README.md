@@ -24,3 +24,28 @@ Chef Claude is a modern React application built as part of the **Scrimba React C
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/torsi1/chef-claude.git](https://github.com/torsi1/chef-claude.git)
+
+2. **Navigate to the directory:**
+   ```bash
+   cd chef-claude
+   
+3. **Install dependencies:**
+   ```bash
+   npm install
+
+4. **Run the app:**
+   ```bash
+   npm run dev
+
+## Key Learnings & Technical Focus
+
+This project was a deep dive into several core React concepts:
+
+* **State Management:** I used the `useState` hook to manage the array of ingredients. I learned how to update state immutably using the spread operator (`[...prevIngredients, newIngredient]`) to ensure React correctly tracks changes.
+* **Form Handling:** Instead of syncing every keystroke to state (controlled components), I implemented the **uncontrolled components** pattern using the native `FormData` API. This approach leads to cleaner code and better performance by reducing unnecessary re-renders.
+* **Conditional Rendering:** I developed logic to dynamically show or hide the recipe section and the "Get a Recipe" button based on the number of ingredients added to the list (minimum 3 required).
+* **Side Effects:** Practiced using the `useEffect` hook to handle synchronization, such as scrolling the recipe into view once it's generated.
+
+## Challenges Overcome
+
+The biggest challenge was ensuring the ingredient list updated correctly before sending the request to the AI. Since React state updates are asynchronous, I learned how to structure my logic to use the most up-to-date data, ensuring the AI always receives the full list of ingredients.
