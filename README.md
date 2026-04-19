@@ -35,7 +35,7 @@ Chef Claude is a modern React application built as part of the **Scrimba React C
 
 4. **Run the app:**
    ```bash
-   npm run dev
+   npm run start
 
 ## Key Learnings & Technical Focus
 
