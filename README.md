@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Chef Claude - AI-Powered Recipe Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Chef Claude is a modern React application built as part of the **Scrimba React Course**. The app allows users to create a dynamic list of ingredients and uses an AI model to suggest a recipe based on the items provided.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Dynamic Ingredient List:** Add ingredients seamlessly using the `FormData` API.
+- **Conditional UI:** The "Get a Recipe" section only appears once you have at least 3 ingredients.
+- **AI Integration:** Leverages an AI model (via Hugging Face) to generate creative recipes from your list.
+- **Responsive Layout:** A clean, chef-themed interface that works on all screen sizes.
+- **Modern React:** Built using functional components and the latest Hooks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React 18** (Functional Components, Hooks)
+- **CSS3** (Flexbox and modern styling)
+- **Vite** (Fast build tool and dev server)
+- **Hugging Face Inference API** (For recipe generation)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation & Setup
 
-### `npm run build`
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/torsi1/chef-claude.git](https://github.com/torsi1/chef-claude.git)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Navigate to the directory:**
+   ```bash
+   cd chef-claude
+   
+3. **Install dependencies:**
+   ```bash
+   npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Run the app:**
+   ```bash
+   npm run dev
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Key Learnings & Technical Focus
 
-### `npm run eject`
+This project was a deep dive into several core React concepts:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **State Management:** I used the `useState` hook to manage the array of ingredients. I learned how to update state immutably using the spread operator (`[...prevIngredients, newIngredient]`) to ensure React correctly tracks changes.
+* **Form Handling:** Instead of syncing every keystroke to state (controlled components), I implemented the **uncontrolled components** pattern using the native `FormData` API. This approach leads to cleaner code and better performance by reducing unnecessary re-renders.
+* **Conditional Rendering:** I developed logic to dynamically show or hide the recipe section and the "Get a Recipe" button based on the number of ingredients added to the list (minimum 3 required).
+* **Side Effects:** Practiced using the `useEffect` hook to handle synchronization, such as scrolling the recipe into view once it's generated.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Challenges Overcome
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The biggest challenge was ensuring the ingredient list updated correctly before sending the request to the AI. Since React state updates are asynchronous, I learned how to structure my logic to use the most up-to-date data, ensuring the AI always receives the full list of ingredients.
