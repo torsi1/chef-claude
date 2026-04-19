@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: Inter, sans-serif;
-    background-color: #FAFAF8;
+    background-color: #FBE8A6;
 }
 
 header {
@@ -14,7 +14,7 @@ header {
     align-items: center;
     gap: 11px;
     height: 80px;
-    background-color: white;
+    background-color: #f8edb5;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
@@ -77,8 +77,9 @@ ul.ingredients-list > li {
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
-    background: #F0EFEB;
+    background: #f8edb5;
     padding: 10px 28px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
 .get-recipe-container h3 {
@@ -96,9 +97,9 @@ ul.ingredients-list > li {
 .get-recipe-container button {
     border: none;
     border-radius: 6px;
-    background: #D17557;
+    background: #F3D250;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-    color: #FAFAF8;
+    color: #19181A;
     padding: 9px 17px;
     font-family: Inter, sans-serif;
     font-size: 0.875rem;

@@ -1,4 +1,4 @@
-import Anthropic from "@anthropic-ai/sdk"
+// import Anthropic from "@anthropic-ai/sdk"
 import { HfInference } from '@huggingface/inference'
 
 const SYSTEM_PROMPT = `
@@ -36,9 +36,10 @@ export async function getRecipeFromMistral(ingredientsArr) {
         const response = await hf.chatCompletion({
             // HuggingFaceH4/zephyr-7b-beta
             // mistralai/Mistral-7B-Instruct-v0.2
+            // Qwen/Qwen2.5-7B-Instruct
             model: "Qwen/Qwen2.5-7B-Instruct",
             messages: [
-                //{ role: "system", content: SYSTEM_PROMPT },
+                // { role: "system", content: SYSTEM_PROMPT },
                 { 
                     role: "user", 
                     content: `${SYSTEM_PROMPT} I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
@@ -54,3 +55,5 @@ export async function getRecipeFromMistral(ingredientsArr) {
         return "Sorry, I couldn't whip up a recipe right now."
     }
 }
+
+console.log("Token Check:", import.meta.env.VITE_HF_TOKEN)
