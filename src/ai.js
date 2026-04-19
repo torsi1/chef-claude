@@ -55,5 +55,3 @@ export async function getRecipeFromMistral(ingredientsArr) {
         return "Sorry, I couldn't whip up a recipe right now."
     }
 }
-
-console.log("Token Check:", import.meta.env.VITE_HF_TOKEN)
